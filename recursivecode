@@ -1,0 +1,15 @@
+bool binarySearch(int a[],int high,int low,int target)
+{
+ 
+ int i; // we define temp var;
+ if(low <=high) 
+ i=(high+low) /2; // we calculate middle element of  an array
+ else
+ return false;
+ if(a[i] == target)
+ return true;
+ else if(a[i] > target)
+ return binarySearch(a,i-1,low,target); // recall function for middle element -1 as a high bound
+ else if(a[i]<target)
+ return binarySearch(a,high,i+1,target); // recall function for middle element +1 as a low bound
+}
